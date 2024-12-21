@@ -1,13 +1,41 @@
-import axios from 'axios';
+import { AuthResponse } from '../types';
 
-const API_URL = 'https://your-api-url.com/api/auth';
+const API_URL = 'http://localhost:3000/api';
 
-export const login = (username: string, password: string) => {
-    // Implement login logic here
+export const login = async (email: string, password: string): Promise<AuthResponse> => {
+    const response = await fetch(`${API_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) {
+        throw new Error('فشل تسجيل الدخول');
+    }
+
+    return response.json();
 };
 
-export const register = (username: string, password: string) => {
-    // Implement registration logic here
+export const register = async (userData: { 
+    name: string; 
+    email: string; 
+    password: string; 
+}): Promise<AuthResponse> => {
+    const response = await fetch(`${API_URL}/auth/register`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+        throw new Error('فشل إنشاء الحساب');
+    }
+
+    return response.json();
 };
 
 export const logout = async () => {

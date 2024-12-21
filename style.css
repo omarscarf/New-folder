@@ -108,6 +108,51 @@ footer {
     width: 100%;
 }
 
+/* Auth Form Styles */
+.auth-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auth-form h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-links a {
+    color: #333;
+    text-decoration: underline;
+}
+
 /* RTL specific styles */
 @media screen and (max-width: 768px) {
     nav ul {
@@ -127,5 +172,10 @@ footer {
 
     footer {
         position: static;
+    }
+    
+    .auth-form {
+        margin: 1rem;
+        padding: 1.5rem;
     }
 }
